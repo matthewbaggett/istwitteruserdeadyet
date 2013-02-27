@@ -1,6 +1,23 @@
 body{
   background-color: #DDDDDD;
 }
+.tagline{
+  font-family: 'Raleway', sans-serif;
+  font-weight: 100;
+  font-size: 20px;
+  text-align: center;
+  width: 300px;
+  height: 300px;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  color: #666666;
+  margin-top: 54px;
+  margin-right: 54px;
+}
 .deadyet{
   font-family: 'Raleway', sans-serif;
   font-weight: 100;
