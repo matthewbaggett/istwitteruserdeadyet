@@ -14,7 +14,7 @@
         die("Wrong Secret");
     }
 
-	chdir("../");
+	chdir("./");
 	// The commands
 	$commands = array(
 		'echo $PWD',
