@@ -1,13 +1,18 @@
 <?php
-require_once("config.php");
+// Load the Config
+$config = parse_ini_file("config.ini", true);
+
+// Decide what to display.
 $state = "No";
-$adjectives['No'] 	= array("disastrously", "dismally", "grievously", "horribly", "lamentably", "miserably", "regrettably", "sadly", "unhappily", "unsuccessfully", "Poor Show");
-$adjectives['Yes'] 	= array("Thankfully", "Happilly", "Jolly Good");
-$rand = rand(0, count($adjectives[$state])-1);
-$adjective = ucfirst($adjectives[$state][$rand]);
 
-$taglines = array("About blunt as a German Barmaid", "Morbid!");
-$rand = rand(0, count($taglines)-1);
-$tagline = $taglines[$rand];
+$username = $config['user']['twitter_name'];
+$alias = $config['user']['alias_name'];
 
+$rand = rand(0, count($config['adjectives'][$state])-1);
+$adjective = ucfirst($config['adjectives'][$state][$rand]);
+
+$rand = rand(0, count($config['taglines']['tagline'])-1);
+$tagline = $config['taglines']['tagline'][$rand];
+
+// Render the template.
 require("template.phtml");
