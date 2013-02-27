@@ -6,6 +6,9 @@
 	 *
 	 *		https://gist.github.com/1809044
 	 */
+    if(!file_exists("config.ini")){
+        die("No config");
+    }
     $config = parse_ini_file("config.ini", true);
     if($_REQUEST['secret'] !== $config['git']['secret']){
         die("Wrong Secret");

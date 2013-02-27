@@ -1,5 +1,8 @@
 <?php
 // Load the Config
+if(!file_exists("config.ini")){
+    die("No config");
+}
 $config = parse_ini_file("config.ini", true);
 
 // Decide what to display.
