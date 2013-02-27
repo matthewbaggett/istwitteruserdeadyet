@@ -6,6 +6,6 @@
   </head>
   <body>
     <div class="tagline"><?php echo $tagline?></div>
-    <div class="deadyet" title="Last seen at <?php echo date("Y-m-d H:i:s")><?php echo $state; ?>. <?php echo $adjective?>.</div>
+    <div class="deadyet" title="Last seen at <?php echo date('Y-m-d H:i:s',$last_time_seen); ?>"><?php echo $state; ?>. <?php echo $adjective?>.</div>
   </body>
 </html>

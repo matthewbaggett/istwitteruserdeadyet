@@ -27,6 +27,7 @@ if(!file_exists($cache_file) || filemtime($cache_file) < strtotime("1 hour ago")
 
 // Parse the feed
 $feed = json_decode(file_get_contents($cache_file));
+var_dump($feed);exit;
 $last_time_seen = strtotime($feed[0]['created_at']);
 if($last_time_seen < strtotime($config['user']['presume_dead_timeout'])){
     $state = "Yes";
