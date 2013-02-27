@@ -21,13 +21,12 @@ if(!file_exists($cache_file) || filemtime($cache_file) < strtotime("1 hour ago")
     curl_close($ch);
 
     if($file_contents){
-        file_put_contents($cache_file,$file_contents);
+        file_put_contents($cache_file, $file_contents);
     }
 }
 
 // Parse the feed
-$feed = json_decode(file_get_contents($cache_file));
-var_dump($feed);exit;
+$feed = json_decode(file_get_contents($cache_file), true);
 $last_time_seen = strtotime($feed[0]['created_at']);
 if($last_time_seen < strtotime($config['user']['presume_dead_timeout'])){
     $state = "Yes";
